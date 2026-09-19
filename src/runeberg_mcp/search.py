@@ -134,8 +134,14 @@ def generate_historical_variants(term: str) -> List[str]:
     elif "hilph" in raw.lower():
         variants.add(re.sub(r"hilph", "hülph", raw, flags=re.IGNORECASE))
 
-    variants.discard(raw)
-    return list(variants)
+    final_variants: Set[str] = set()
+    for v in variants:
+        if raw and raw[0].isupper() and v and v[0].islower():
+            v = v[0].upper() + v[1:]
+        final_variants.add(v)
+
+    final_variants.discard(raw)
+    return list(final_variants)
 
 
 def search_duckduckgo_term(query_term: str, max_results: int = 10) -> List[SearchResult]:
