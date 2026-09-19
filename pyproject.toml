@@ -1,0 +1,40 @@
+[project]
+name = "runeberg-mcp"
+version = "0.1.0"
+description = "MCP server and CLI for searching and reading digitized Nordic literature and encyclopedias from Project Runeberg (runeberg.org)"
+readme = "README.md"
+license = "MIT"
+authors = [
+    { name = "Tobbe", email = "tobbe75@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "beautifulsoup4>=4.12.0",
+    "ddgs>=9.16.0",
+    "httpx>=0.28.1",
+    "mcp[cli]>=1.2.0",
+    "pydantic>=2.0.0",
+]
+
+keywords = [
+    "mcp",
+    "model-context-protocol",
+    "runeberg",
+    "nordic-literature",
+    "swedish-history",
+    "genealogy",
+    "släktforskning",
+    "encyclopedia",
+]
+
+[project.urls]
+Homepage = "https://github.com/tobbaz/runeberg-mcp"
+Repository = "https://github.com/tobbaz/runeberg-mcp"
+
+[project.scripts]
+runeberg-mcp = "runeberg_mcp.cli:main"
+runeberg = "runeberg_mcp.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.12.15,<0.13.0"]
+build-backend = "uv_build"
