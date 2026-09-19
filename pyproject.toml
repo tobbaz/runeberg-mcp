@@ -1,6 +1,6 @@
 [project]
 name = "runeberg-mcp"
-version = "0.1.0"
+version = "0.2.0"
 description = "MCP server and CLI for searching and reading digitized Nordic literature and encyclopedias from Project Runeberg (runeberg.org)"
 readme = "README.md"
 license = "MIT"
